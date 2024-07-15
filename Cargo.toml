@@ -8,9 +8,12 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-slack-flows = "0.3"
-openai-flows = "0.7"
-dotenv = "0.15.0"
-tokio_wasi = { version = "1.25.0", features = ["rt", "macros"] }
-flowsnet-platform-sdk = "0.1"
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+dotenv = "0.15"
+flowsnet_platform_sdk = "0.1" # Adjust this version according to your requirements
+openai_flows = "0.1" # Adjust this version according to your requirements
+slack_flows = "0.1" # Adjust this version according to your requirements
+tokio = { version = "1", features = ["full"] }
 log = "0.4"
