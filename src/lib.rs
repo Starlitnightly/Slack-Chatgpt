@@ -7,6 +7,8 @@ use openai_flows::{
 use slack_flows::{listen_to_channel, send_message_to_channel, SlackMessage};
 use std::env;
 use reqwest::Client;
+use serde_json::json; // Add this line
+
 
 #[no_mangle]
 #[tokio::main(flavor = "current_thread")]
