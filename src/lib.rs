@@ -7,8 +7,7 @@ use openai_flows::{
 use slack_flows::{listen_to_channel, send_message_to_channel, SlackMessage};
 use std::env;
 use reqwest::Client;
-use serde_json::json; // Add this line
-
+use serde_json::json;
 
 #[no_mangle]
 #[tokio::main(flavor = "current_thread")]
@@ -55,7 +54,7 @@ async fn handler(sm: SlackMessage, workspace: &str, channel: &str) {
             let client = Client::new();
             let res = client.post(&api_url)
                 .header("Authorization", format!("Bearer {}", api_key))
-                .json(&serde_json::json!({
+                .json(&json!({
                     "model": co.model,
                     "messages": [{"role": "user", "content": sm.text}]
                 }))
